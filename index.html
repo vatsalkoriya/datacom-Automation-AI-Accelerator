@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Datacom Kudos employee appreciation dashboard">
+  <title>Datacom Kudos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Datacom Kudos home">
+      <span class="brand-mark">D</span>
+      <span>Datacom <strong>Kudos</strong></span>
+    </a>
+    <div class="profile">
+      <label for="role-select">Viewing as</label>
+      <select id="role-select" aria-label="Choose demo user"></select>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">EMPLOYEE RECOGNITION</p>
+        <h1>Celebrate the people<br><span>who make a difference.</span></h1>
+        <p class="hero-copy">A small thank you can make a big impact. Give a colleague kudos and spread the good work.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">✦</div>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <section class="dashboard-grid">
+      <article class="card composer-card">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">SEND SOME LOVE</p>
+            <h2>Give kudos</h2>
+          </div>
+          <span class="icon-badge" aria-hidden="true">♥</span>
+        </div>
+        <form id="kudos-form" novalidate>
+          <label for="recipient">Who are you celebrating?</label>
+          <select id="recipient" required></select>
+          <label for="message">Your message</label>
+          <textarea id="message" maxlength="500" rows="5" placeholder="Tell them what they did brilliantly..." required></textarea>
+          <div class="form-meta"><span id="message-error" class="field-error"></span><span id="counter">0 / 500</span></div>
+          <button class="primary-button" type="submit">Send kudos <span aria-hidden="true">→</span></button>
+        </form>
+      </article>
+
+      <article class="card feed-card">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">THE GOOD STUFF</p>
+            <h2>Recent kudos</h2>
+          </div>
+          <span id="kudos-count" class="count-pill">0</span>
+        </div>
+        <div id="feed" class="feed" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <section id="moderation-section" class="card moderation-card hidden">
+      <div class="card-heading">
+        <div>
+          <p class="eyebrow">ADMINISTRATION</p>
+          <h2>Moderation queue</h2>
+        </div>
+        <span class="admin-label">ADMIN ONLY</span>
+      </div>
+      <div id="moderation-list"></div>
+    </section>
+  </main>
+  <footer>Datacom Kudos · Build a culture of appreciation</footer>
+  <script src="app.js"></script>
+</body>
+</html>
+
